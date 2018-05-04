@@ -14,3 +14,15 @@ function exactMatch(drivers, query) {
     return driver[key] === query[key]
   })
 }
+
+function exactMatchToList(drivers, query) {
+  list = [];
+  drivers.map(function(driver) {
+    let key = Object.keys(query);
+    if (driver[key] === query[key]) {
+      console.log(driver.name)
+      list.push(driver.name);
+    }
+  })
+  return list;
+}
